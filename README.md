@@ -1,0 +1,1 @@
+# trytond-account_invoice_journal_shop
