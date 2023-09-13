@@ -12,3 +12,8 @@ class Invoice(metaclass=PoolMeta):
             self.journal = self.shop.journal_revenue
         elif self.type == 'in' and self.shop and self.shop.journal_expense:
             self.journal = self.shop.journal_expense
+
+    @fields.depends(methods=['on_change_type'])
+    def on_change_shop(self):
+        super().on_change_shop()
+        self.on_change_type()

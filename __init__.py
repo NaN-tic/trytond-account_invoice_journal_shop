@@ -4,11 +4,13 @@
 from trytond.pool import Pool
 from . import shop
 from . import invoice
+from . import sale
 
 
 def register():
     module = 'account_invoice_journal_shop'
     Pool.register(
         invoice.Invoice,
+        sale.Sale,
         shop.Shop,
         module=module, type_='model')
