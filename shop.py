@@ -6,10 +6,6 @@ from trytond.pyson import Eval
 class Shop(metaclass=PoolMeta):
     __name__ = 'sale.shop'
 
-    logo = fields.Binary('Logo')
-    email = fields.Char('E-mail')
-    phone = fields.Char('Phone')
-
     journal_revenue = fields.Many2One(
         'account.journal', 'Account Journal Revenue',
         domain=[

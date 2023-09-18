@@ -1,12 +1,4 @@
 <data>
-    <xpath expr="/form/field[@name='warehouse']" position="after">
-        <label name="logo"/>
-        <field name="logo"/>
-        <label name="email"/>
-        <field name="email"/>
-        <label name="phone"/>
-        <field name="phone"/>
-    </xpath>
     <xpath expr="/form/notebook/page[@id='general']/field[@name='price_list']" position="after">
         <newline/>
         <label name="journal_revenue"/>
