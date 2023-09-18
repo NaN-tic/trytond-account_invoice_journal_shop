@@ -5,9 +5,9 @@ from trytond.model import fields
 class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
 
-    @fields.depends('shop', 'journal')
-    def on_change_type(self):
-        super(Invoice, self).on_change_type()
+    @fields.depends('type', 'shop')
+    def set_journal(self, pattern=None):
+        super(Invoice, self).set_journal(pattern)
         if self.type == 'out' and self.shop and self.shop.journal_revenue:
             self.journal = self.shop.journal_revenue
         elif self.type == 'in' and self.shop and self.shop.journal_expense:
