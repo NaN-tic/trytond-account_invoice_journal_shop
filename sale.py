@@ -1,4 +1,4 @@
-from trytond.pool import Pool, PoolMeta
+from trytond.pool import PoolMeta
 
 class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
