@@ -12,7 +12,7 @@ class Shop(metaclass=PoolMeta):
             ('type', '=', 'revenue'),
             ],
         context={
-            'company': Eval('company'),
+            'company': Eval('company', -1),
             },
         depends=['company'])
     journal_expense = fields.Many2One(
@@ -21,6 +21,6 @@ class Shop(metaclass=PoolMeta):
             ('type', '=', 'expense'),
             ],
         context={
-            'company': Eval('company'),
+            'company': Eval('company', -1),
             },
         depends=['company'])
